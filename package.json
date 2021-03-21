@@ -4,6 +4,7 @@
   "description": "API to be called from Chatfuel to help with chatbot tasks",
   "main": "index.js",
   "scripts": {
+    "lint": "",
     "test": "jest",
     "prepare": "husky install"
   },

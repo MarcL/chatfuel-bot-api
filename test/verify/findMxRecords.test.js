@@ -8,6 +8,10 @@ jest.mock('dns', () => ({
 }));
 
 describe('findMxRecords', () => {
+    afterAll(() => {
+        jest.resetAllMocks();
+    });
+
     it('should throw expected error if no email is passed', async () => {
         expect.assertions(1);
 

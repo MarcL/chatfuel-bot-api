@@ -1,7 +1,7 @@
 const {resolveMx} = require('dns').promises;
 
 // Perform an MX lookup - check if the DNS record exists
-const findMxRecords = async (email) => {
+const findMxRecords = async (email = '') => {
     const [, domain] = email.split('@');
 
     try {
@@ -17,7 +17,7 @@ const findMxRecords = async (email) => {
             throw new Error(`Email domain is valid but has no MX record so no email can be delivered: ${domain}`);
         }
 
-        throw new Error(`Invalid MX record`);
+        throw new Error(`Invalid MX record for domain: ${domain}`);
     }
 };
 
